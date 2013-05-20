@@ -1,0 +1,106 @@
+/*
+	Large Screen Experience.
+
+	Will have a maximum interface width of 960px.
+
+	Three 298px wide columns, with 33px gutters in-between them. In fixed 
+	width (from a Photoshop mockup for example), our interface is a total of 
+	960px wide.
+	
+		298px + 33px + 298px + 33px + 298px = 960px (3 columns and 2 gutters)
+
+	Convert column and gutter widths to percentages via the following formula:
+	(fixed item width / fixed max interface width) * 100 = percentage
+		
+	column width [fixed]	= 298px
+	column width [formula]	= (298 / 960) * 100
+	column width [percent]	= 31.04166666666667%
+
+	gutter width [fixed]	= 33px
+	column width [formula]	= (33 / 960) * 100
+	gutter width [percent]	= 3.4375%
+*/
+
+body {
+	background: transparent url(../images/background.jpg)
+}
+
+.container {
+	max-width: 960px;							/* 960px max interface width */
+	margin: 20px auto;
+}
+
+h1, footer, footer a {
+	color: #834628;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+section {
+	overflow: hidden;
+	zoom: 1;
+	padding: 20px 0;
+	border: 1px solid #834628;
+	border-left: none;
+	border-right: none;
+}
+
+.column-a, .column-b, .column-c {
+	float: left;
+	width: 31.04166666666667%;					/* 298px column width */
+	text-shadow: 0 0 10px #fff;
+}
+
+.column-a, .column-b {
+	margin-right: 3.4375%;						/* 33px gutter width */
+}
+
+.column-b img {
+	width: 100%;
+}
+
+footer {
+	clear: both;
+	margin: 20px auto;
+	text-align: right;
+	font-weight:bold;
+}
+
+/*
+	Medium Screen Experience.
+
+	First column has width and gutter removed, making it stretch full width.
+
+	Second and third columns get a larger width to make a two column layout.
+	
+	To determine the new, larger width of the second and third columns:
+		1) 2 columns + 1 gutter = 960px			// 960 is max fixed width
+		2) 2 columns + 33px = 960px				// 33px is earlier defined gutter
+		3) 2 columns = 927px
+		4) each column = 927px / 2
+		5) each column = 463.5px
+		6) (463.5 / 960) * 100 = 48.28125%		// use formula for percentage
+*/
+@media only screen and (max-width: 700px) {
+	.column-a {
+		width: 100%;
+		margin-right: 0;
+	}
+	
+	.column-b, .column-c {
+		width: 48.28125%;
+	}
+}
+
+/*
+	Small Screen Experience.
+
+	All three columns stacked vertically, to create one column.
+
+	All previously defined column widths are removed. All gutters are removed.
+*/
+@media only screen and (max-width: 500px) {	
+	.column-a, .column-b, .column-c {
+		width: 100%;
+		margin-right: 0;
+	}
+}
