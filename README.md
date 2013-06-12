@@ -5,6 +5,10 @@ The source code to accompany an internal "Learning Cafe" presentation for DRC.
 
 You can run this project in the browser at http://bartlewis.github.io/rwd-presentation
 
+The slides are available at https://docs.google.com/presentation/d/1DC79OKInw7eCYfRNNBmow1OsOKqnwIDkTJX7q2qo8D4/edit?usp=sharing
+
+A live recording of the webinar is available at http://www.youtube.com/watch?v=lBA1syVPt3Q
+
 Link dump for the presentation
 ------------------------------
 
